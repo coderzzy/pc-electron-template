@@ -34,3 +34,7 @@ npm run build
 ```
 npm run dist
 ```
+
+## TODO
+1. 调用系统接口能力（比如获取系统信息）
+2. 压缩打包的体积

@@ -10,6 +10,6 @@
       "skipLibCheck": true,
       "baseUrl": "."
     },
-    "include": ["electron"]
+    "include": ["electron/main.ts"]
   }
   
