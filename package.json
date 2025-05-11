@@ -2,6 +2,40 @@
   "name": "pc-electron-template",
   "version": "0.1.0",
   "private": true,
+  "main": "dist-electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"cross-env BROWSER=false npm run react-start\" \"wait-on http://localhost:3000 && npm run electron\"",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build && tsc -p tsconfig.electron.json",
+    "electron": "electron .",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.zzy.pcelectrontemplate",
+    "productName": "PC Electron Template",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "dist-electron/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -16,12 +50,6 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +68,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^36.2.0",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.3"
   }
 }
