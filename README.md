@@ -1,6 +1,10 @@
 # pc-electron-template
 pc客户端应用，使用electron开发，模版项目
 
+## demo功能
+- 用 electron 获取磁盘信息，并用 react 展示
+![Image text](https://github.com/coderzzy/pc-electron-template/blob/main/promotional_assets/screenshot.jpg)
+
 ## 项目结构
 - electron + react + cra + typescript
 
@@ -36,5 +40,4 @@ npm run dist
 ```
 
 ## TODO
-1. 调用系统接口能力（比如获取系统信息）
-2. 压缩打包的体积
+1. 压缩打包的体积
