@@ -63,7 +63,7 @@ npm run dist
 6. 钉住公证票据（Staple）
 - xcrun stapler staple <YOUR_DMG_PATH>
 7. 验证签名
-- spctl --assess --verbose=4 <YOUR_DMG_PATH>
+- spctl --assess --verbose=4 <YOUR_APP_PATH>
 accepted表示通过
 
 ## TODO
